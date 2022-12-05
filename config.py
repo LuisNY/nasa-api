@@ -5,6 +5,7 @@ class Config:
 
     API_KEY = 'hpYHVJpQN3dXPGb8YKXxtFueBOX8PA9gfrf8Lco1'
     CACHE_PATH = './cached_photos'
+    CACHE_CAPACITY = 20
 
     def __init__(self):
         self.start_date = date.today() - timedelta(days=9)
@@ -13,6 +14,7 @@ class Config:
         self.rover = 'curiosity'
         self.days_lookback = 10
         self.day_limit = 3
+
 
     def parse(self):
         parser = argparse.ArgumentParser()
@@ -36,10 +38,3 @@ class Config:
             self.rover = args.rover
         if args.day_limit is not None:
             self.day_limit = args.day_limit
-
-
-
-
-
-
-
